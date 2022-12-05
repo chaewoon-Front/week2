@@ -1,30 +1,15 @@
-import { useState } from "react";
+// src/App.js
 
-function App() {
-  const [names, setNames] = useState(["123", "김민수"]);
-  const [input, setInput] = useState("");
+import React from "react";
+import { useSelector } from "react-redux"; // import 해주세요.
 
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
-  };
+const App = () => {
+  const counterStore = useSelector((state) => state);
+  const number = useSelector((state) => state.counter.number);
+  console.log(counterStore);
+  console.log(number);
 
-  const handleUpload = () => {
-    setNames((prevState) => {
-      return [input, ...prevState];
-    });
-  };
-
-  console.log(input);
-
-  return (
-    <div>
-      <input type="text" value={input} onChange={handleInputChange} />
-      <button onClick={handleUpload}>Upload</button>
-      {names.map((name, idx) => {
-        return <p key={idx}>{name}</p>;
-      })}
-    </div>
-  );
-}
+  return <div></div>;
+};
 
 export default App;
