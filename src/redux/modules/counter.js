@@ -7,6 +7,7 @@ const initialState = {
 
 // 리듀서
 const counter = (state = initialState, action) => {
+  console.log(action);
   switch (action.type) {
     default:
       return state;
