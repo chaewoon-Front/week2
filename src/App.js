@@ -1,22 +1,7 @@
-// src/App.js
+import Router from "./shared/Router";
 
-import React, { useState } from "react";
-import { useState } from "react";
-
-const App = () => {
-  const [number, setNumber] = useState(0);
-  const onChangeHandler = (event) => {
-    const { value } = event.target;
-    setNumber(+value);
-  };
-  console.log(number);
-  return (
-    <div>
-      <input type="number" onChange={onChangeHandler} />
-      <button>더하기</button>
-      <button>빼기</button>
-    </div>
-  );
-};
+function App() {
+  return <Router />;
+}
 
 export default App;
